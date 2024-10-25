@@ -16,7 +16,7 @@ export default function ProductDetailsPage(props) {
 export async function getStaticProps(context) {
     const {params} = context;
 
-    const productId = params.id;
+    const productId = params.pid;
 
     const filePath = path.join(process.cwd(), 'data', 'dummy-backend.json');
     const jsonData = await fs.readFile(filePath);
@@ -34,9 +34,9 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
     return {
         paths: [
-            {params: {id: 'p1'}},
-            {params: {id: 'p2'}},
-            {params: {id: 'p3'}}
+            {params: {pid: 'p1'}},
+            {params: {pid: 'p2'}},
+            {params: {pid: 'p3'}}
         ],
         fallback: false
     }
